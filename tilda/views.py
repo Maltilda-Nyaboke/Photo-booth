@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http  import HttpResponse
+
 
 # Create your views here.
-def home
+def home():
+    return HttpResponse('Welcome to tilda app')
