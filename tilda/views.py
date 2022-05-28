@@ -4,4 +4,7 @@ from django.http  import HttpResponse
 
 # Create your views here.
 def home(request):
-    return request('Welcome to tilda app')
+    return render (request, 'home.html')
+
+def add(request):
+    return render (request, 'add.html')    
