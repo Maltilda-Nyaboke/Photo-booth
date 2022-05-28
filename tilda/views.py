@@ -8,3 +8,6 @@ def home(request):
 
 def add(request):
     return render (request, 'add.html')    
+
+def view(request):
+    return render (request, 'view.html')
