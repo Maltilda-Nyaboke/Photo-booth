@@ -19,6 +19,6 @@ def add(request):
     return render (request, 'photos/add.html')    
 
 def view(request,id):
-    image = Image.objects.filter(id=id).first()
+    image = Image.objects.get(id=id)
     
     return render (request, 'photos/view.html',{'image':image})

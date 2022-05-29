@@ -35,7 +35,7 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
             <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="{{image.image.url}}" alt="book">
               <div class="card-body">
-                <a href="{% url 'view' %}" class="btn btn-primary">view</a>
+                <a href="{% url 'view' image.id %}" class="btn btn-primary">view</a>
                 </div>
             </div>
           </div>
