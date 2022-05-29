@@ -6,8 +6,12 @@ from .models import Category,Location,Image
 # Create your views here.
 def home(request):
     categories = Category.objects.all()
+    images = Image.objects.all()
+    locations = Location.objects.all()
     context = {
         'categories': categories,
+        'images': images,
+        'locations': locations,
     }
     return render (request, 'photos/index.html',context)
 
