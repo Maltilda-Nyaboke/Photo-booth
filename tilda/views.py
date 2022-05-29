@@ -18,6 +18,13 @@ def home(request):
 def add(request):
     categories = Category.objects.all()
     locations = Location.objects.all()
+
+    if request.method == 'POST':
+        data = request.POST
+        image = request.FILES.get('image')
+        print('data:', data) 
+        print('image:', data)    
+
     context = {
         'categories': categories,
         'locations': locations,
