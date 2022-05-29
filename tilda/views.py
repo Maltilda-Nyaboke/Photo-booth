@@ -22,8 +22,19 @@ def add(request):
     if request.method == 'POST':
         data = request.POST
         image = request.FILES.get('image')
-        print('data:', data) 
-        print('image:', data)    
+    
+    if data['category'] != 'none':
+        category = Category.objects.get(id=data['category'])
+
+    else:
+        category = None
+    
+
+
+        if data['location'] != 'none':
+            location = Location.objects.get(id=data['location'])
+        else:
+            location = None    
 
     context = {
         'categories': categories,
