@@ -12,7 +12,7 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
 
-    def update_category(self, pk):
+    def update_category(self, id):
         image = self.objects.get(id=id)
         image.update()
 
@@ -26,7 +26,11 @@ class Location(models.Model):
         self.save()
 
     def delete_location(self):
-        self.delete()    
+        self.delete() 
+
+    def update_location(self, id):
+        image = self.objects.get(id=id)
+        image.update()       
 
 
     def __str__(self):
