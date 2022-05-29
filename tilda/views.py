@@ -16,7 +16,13 @@ def home(request):
     return render (request, 'photos/index.html',context)
 
 def add(request):
-    return render (request, 'photos/add.html')    
+    categories = Category.objects.all()
+    locations = Location.objects.all()
+    context = {
+        'categories': categories,
+        'locations': locations,
+    }
+    return render (request, 'photos/add.html',context)    
 
 def view(request,id):
     image = Image.objects.get(id=id)
