@@ -30,6 +30,7 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
       </div>
       <div class="col-md-9">
         <div class="row">
+          {% for image in images %}
           <div class="col-md-4">
             <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="https://www.prestigeanimalhospital.com/sites/default/files/interesting-cat-facts.jpg" alt="Card image cap">
@@ -38,7 +39,7 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
                 </div>
             </div>
           </div>
-          
+          {% endfor %}
         </div>
       </div>
     </div>
