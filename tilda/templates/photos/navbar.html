@@ -28,13 +28,13 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
                     
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       {% for  location in locations %}
-                        <a class="dropdown-item" href="{% url 'get_location' location.id %}">{{location.name}}</a>
+                        <a class="dropdown-item" href="">{{location.name}}</a>
                         {%endfor%} 
                     </div>
                 </li>
             </ul>
             <div class="col-sm-4 col-md-4 navbar-right">
-              <form class="navbar-form" role="search" method="" action="{% url 'search_results' %}" >
+              <form class="navbar-form" role="search" method="" action="" >
                 {% csrf_token %}
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search  By Category" name="name">

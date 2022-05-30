@@ -12,10 +12,9 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                {% for image in images %}
               <img class="card-img-top" src="{{image.image.url}}" alt="Card image cap">
               <p>{{image.description}}</p>
-              {% endfor %}
+              
                 <a href="{% url 'home' %}" class="btn btn-outline-primary">Back</a>
             </div>
 
