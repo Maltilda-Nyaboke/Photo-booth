@@ -13,9 +13,22 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
         <div class="row justify-content-center">
             <div class="col-md-6">
                 {% for image in images %}
-              <img class="card-img-top" src="{{image.image.url}}" alt="Card image cap">
-              <p>{{image.description}}</p>
-                    {% endfor %}
+                    
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="{{image.image.url}}" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">{{image.name}}</h5>
+                              <p class="card-text">{{image.description}}</p>
+                              <p class="card-text"><small class="text-muted">{{location.name}}</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
                 <a href="{% url 'home' %}" class="btn btn-outline-primary">Back</a>
             </div>
 
