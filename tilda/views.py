@@ -23,29 +23,8 @@ def add(request):
         data = request.POST
         image = request.FILES.get('image')
     
-        if data['category'] != 'none':
-            category = Category.objects.get(id=data['category'])
+        
 
-        else:
-            category = None
-            
-        image = Image.objects.create(
-            category=category,
-            description=data['description'],
-            image=image,
-        )
-
-
-        if data['location'] != 'none':
-            location = Location.objects.get(id=data['location'])
-        else:
-            location = None 
-        image = Image.objects.create(
-            location=location,
-            description=data['description'],
-            image=image,
-        )   
-        return redirect('home')
     context = {
         'categories': categories,
         'locations': locations,
