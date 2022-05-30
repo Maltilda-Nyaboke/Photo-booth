@@ -40,11 +40,11 @@ def add(request):
             location = Location.objects.get(id=data['location'])
         else:
             location = None 
-            image = Image.objects.create(
-                location=location,
-                description=data['description'],
-                image=image,
-            )   
+        image = Image.objects.create(
+            location=location,
+            description=data['description'],
+            image=image,
+        )   
         return redirect('home')
     context = {
         'categories': categories,
