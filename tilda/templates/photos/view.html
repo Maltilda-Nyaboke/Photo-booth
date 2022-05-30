@@ -12,10 +12,14 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-              <img class="card-img-top" src="{{image.image.url}}" alt="Card image cap">
-              <p>{{image.description}}</p>
+                <div class="card" style="width: 18rem;">
+                    <img src="{{image.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">{{image.description}}</p>
+                    </div>
+                  </div>
               
-                <a href="{% url 'home' %}" class="btn btn-outline-primary">Back</a>
+                <a href="{% url 'home' %}" class="btn btn-outline-primary" style="margin: 20px;">Back</a>
             </div>
 
         </div>
