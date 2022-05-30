@@ -54,8 +54,8 @@ def search_results(request):
 def get_category(request,category_id):
     images=Image.filter_by_category(category_id)
 
-    return render (request,'index.html',{'images':images})
+    return render (request,'view.html',{'images':images})
 def get_location(request,location_id):
     images=Image.filter_by_location(location_id)
 
-    return render (request,'index.html',{'images':images})        
+    return render (request,'view.html',{'images':images})        
