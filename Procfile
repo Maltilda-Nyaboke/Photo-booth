@@ -1,1 +1,1 @@
-web: gunicorn tilda.wsgi
+web: gunicorn photo.wsgi
