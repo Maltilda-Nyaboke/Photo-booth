@@ -1,1 +1,1 @@
-web: gunicorn tilda.wsgi --log-file -
+web: gunicorn tilda.wsgi
