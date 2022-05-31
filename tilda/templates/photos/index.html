@@ -11,23 +11,25 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen, projection">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen, projection">
+
 </head>
 {% include 'photos/navbar.html' %}
 
 
-<body class="m-5" style="background-image: url(static/media/cover.jpg);">
+<body class="m-5" style="background-color:white;">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" style="background-color: #FD9539;color: white;">
           <div class="card-header">
             Locations
           </div>
 
           <ul class="list-group list-group-flush">
             {% for location in locations %}
-            <li class="list-group-item"><a class="dropdown-item" href="{% url 'location' location.id %}">{{location.name}}</a></li>
+            <li class="list-group-item"><a class="dropdown-item" href="{% url 'location' location.id %}"
+                onMouseOver="this.style.color='#FD9539'" onMouseOut="this.style.color='#000'">{{location.name}}</a></li>
             {% endfor %}
             <!-- <a href="add" class="btn btn-primary">Add photo</a> -->
           </ul>
@@ -38,22 +40,49 @@
         <div class="row">
           {% for image in images %}
           <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="{{image.image.url}}" alt="book">
+            <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 18rem;">
+              <img class="card-img-top" src="{{image.image.url}}"  alt="book">
               <div class="card-body">
                 <h3 class="text-center">{{image.name}}</h3>
-                <a href="{% url 'view' image.id %}" class="btn btn-primary btn-sm" style="width: 100%;">view</a>
+                <a href="{% url 'view' image.id %}" class="btn btn-sm"
+                  style="width: 100%; background-color: #FD9539;color: white;">view</a>
               </div>
             </div>
-          </br>
+            </br>
           </div>
           {% empty %}
           <h3 class="text-center">Can't find the requested image</h3>
-        {% endfor %}
+          {% endfor %}
+
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    {% for image in images %}
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{image.name}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="{{image.image.url}}" alt="" style="height: 15rem">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
